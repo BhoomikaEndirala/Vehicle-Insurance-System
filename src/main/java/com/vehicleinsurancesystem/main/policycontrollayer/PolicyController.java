@@ -20,7 +20,7 @@ public class PolicyController {
 	@Autowired
 	private PolicyService ps;
 	
-	@PostMapping
+	@PostMapping("/policycreation")
 	public Policies createPolicy(@RequestBody Policies policy) {
 	    return ps.createPolicy(policy);
 	}

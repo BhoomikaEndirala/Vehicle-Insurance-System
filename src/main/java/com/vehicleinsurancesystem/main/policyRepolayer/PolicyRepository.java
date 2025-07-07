@@ -10,5 +10,7 @@ public interface PolicyRepository extends JpaRepository<Policies, String>{
 	
 	// to find the policies based on vehicletype year and month
 	List<Policies> findByVehicleTypeAndYearAndMonth(String vehicleType, String year, String month);
+	List<Policies> findByStatus(String status);
+
 
 }
