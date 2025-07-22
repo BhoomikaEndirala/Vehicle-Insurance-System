@@ -167,7 +167,7 @@
 
 <script>
 function loadAllClaims() {
-    fetch('http://localhost:8080/claims/getclaims')
+    fetch('/claims/getclaims')
     .then(res => res.json())
     .then(data => {
         let table = `<table class="table table-bordered table-striped">
@@ -213,7 +213,7 @@ function formatDate(dateStr) {
 function promptUpdate() {
     let claimId = prompt("Enter Claim ID to Update:");
     if (claimId) {
-        fetch(`http://localhost:8080/claims/status/${claimId}`)
+        fetch(`/claims/status/${claimId}`)
         .then(res => {
             if (!res.ok) throw new Error('Claim ID not found');
             return res.json();
@@ -261,7 +261,7 @@ function submitUpdate(event, claimId) {
         status: form.status.value,
         remarks: form.remarks.value
     };
-    fetch(`http://localhost:8080/claims/update/${claimId}`, {
+    fetch(`/claims/update/${claimId}`, {
         method: 'PUT',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(obj)
