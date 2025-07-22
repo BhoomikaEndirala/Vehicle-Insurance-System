@@ -2,6 +2,8 @@ package com.vehicleinsurancesystem.main;
 
 
 
+import java.util.List;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -14,6 +16,7 @@ public class User {
 
     private String email;
     private String password;
+    
     
     public User() {
     	
@@ -43,8 +46,4 @@ public class User {
 		this.password = password;
 	}
 
-	
-    
-
-    // Getters and Setters
 }

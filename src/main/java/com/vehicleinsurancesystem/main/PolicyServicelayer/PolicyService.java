@@ -41,5 +41,56 @@ public class PolicyService {
     public Optional<Policies> getById(String policyId){
     	return pr.findById(policyId);
     }
+    
+    public boolean deletePolicy(String policyId) {
+        Optional<Policies> policyOpt = pr.findById(policyId);
+
+        if (policyOpt.isPresent()) {
+            pr.deleteById(policyId);
+            return true;
+        }
+
+        return false; // Let controller throw the exception
+    }
+    
+    public Policies updatePolicy(String policyId, Policies updatedPolicy) {
+        Optional<Policies> existingPolicyOpt = pr.findById(policyId);
+
+        if (existingPolicyOpt.isPresent()) {
+            Policies existingPolicy = existingPolicyOpt.get();
+
+            if (updatedPolicy.getPolicyname() != null) {
+                existingPolicy.setPolicyname(updatedPolicy.getPolicyname());
+            }
+            if (updatedPolicy.getVehicleType() != null) {
+                existingPolicy.setVehicleType(updatedPolicy.getVehicleType());
+            }
+            if (updatedPolicy.getYear() != null) {
+                existingPolicy.setYear(updatedPolicy.getYear());
+            }
+            if (updatedPolicy.getMonth() != null) {
+                existingPolicy.setMonth(updatedPolicy.getMonth());
+            }
+            if (updatedPolicy.getTenureInMonths() != null) {
+                existingPolicy.setTenureInMonths(updatedPolicy.getTenureInMonths());
+            }
+            if (updatedPolicy.getDescription() != null) {
+                existingPolicy.setDescription(updatedPolicy.getDescription());
+            }
+            if (updatedPolicy.getPolicyDocumentPath() != null) {
+                existingPolicy.setPolicyDocumentPath(updatedPolicy.getPolicyDocumentPath());
+            }
+            if (updatedPolicy.getStatus() != null) {
+                existingPolicy.setStatus(updatedPolicy.getStatus());
+            }
+            if (updatedPolicy.getPremiumamount() != 0.0) {
+                existingPolicy.setPremiumamount(updatedPolicy.getPremiumamount());
+            }
+
+            return pr.save(existingPolicy); // Save the updated entity to DB
+        } else {
+            return null; // Controller layer will throw exception
+        }
+    }
 
 }

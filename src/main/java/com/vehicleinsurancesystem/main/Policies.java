@@ -9,37 +9,31 @@ public class Policies {
 	 @Id
 	 @Column(nullable = false, unique = true, length = 50)
 	 private String policyId;
+	 
 	 @Column(nullable=false)
 	 private String policyname;
+	 
 	 @Column(nullable = false)
 	 private String year;
+	 
 	 @Column(nullable=false)
 	 private String month;
+	 
 	 @Column(nullable=false)
 	 private String vehicleType;
-	 private String status;
-	 public String getYear() {
-		return year;
-	}
-
-	public void setYear(String year) {
-		this.year = year;
-	}
-
-	public String getMonth() {
-		return month;
-	}
-
-	public void setMonth(String month) {
-		this.month = month;
-	}
-
+	 
+	 @Column(nullable=false)
+	 private String status = "Available";
+	 
 	@Column(nullable=false)
 	 private double premiumamount;
+	
 	 @Column(nullable = false)
 	 private Integer tenureInMonths;
-	 @Column(length = 5000)
+	 
+	 @Column(nullable = false, length = 5000)
 	 private String description; // Brief terms and conditions
+	 
 	 private String policyDocumentPath; // File path or URL for uploaded PDF
 
 	 
@@ -69,6 +63,22 @@ public class Policies {
 
 	public void setPremiumamount(double premiumamount) {
 		this.premiumamount = premiumamount;
+	}
+
+	public String getYear() {
+		return year;
+	}
+
+	public void setYear(String year) {
+		this.year = year;
+	}
+
+	public String getMonth() {
+		return month;
+	}
+
+	public void setMonth(String month) {
+		this.month = month;
 	}
 
 	public Integer getTenureInMonths() {
