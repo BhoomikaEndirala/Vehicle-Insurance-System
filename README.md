@@ -23,7 +23,7 @@ A **Full Stack Web Application** built using **Java, Spring Boot, MySQL** (Backe
 
 ---
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 | Layer     | Technology               |
 |-----------|---------------------------|
@@ -37,6 +37,7 @@ A **Full Stack Web Application** built using **Java, Spring Boot, MySQL** (Backe
 ---
 
 ## 📂 Project Structure
+
 src/
 ├── main/
 │ ├── java/com/vehicleinsurancesystem/
@@ -54,12 +55,13 @@ src/
 │ └── application.properties (local only)
 └── test/
 
+yaml
+Copy
+Edit
+
 ---
 
 ## 🧑‍💻 How to Run the Project
-
-1. **Clone the Repository:**
- How to Run the Project
 
 1. **Clone the Repository:**
 git clone https://github.com/BhoomikaEndirala/Vehicle-Insurance-System.git
@@ -69,6 +71,7 @@ Setup Database:
 Create a database vehicleinsurancedb in MySQL.
 
 Update your local application.properties (this file is ignored from Git for security):
+
 spring.datasource.url=jdbc:mysql://localhost:3306/vehicleinsurancedb
 spring.datasource.username=YOUR_DB_USERNAME
 spring.datasource.password=YOUR_DB_PASSWORD
@@ -76,36 +79,52 @@ spring.mail.username=YOUR_EMAIL
 spring.mail.password=YOUR_GMAIL_APP_PASSWORD
 
 Run the Application:
-Open in Spring Tool Suite (STS)
+
+Open in Spring Tool Suite (STS).
+
 Run as Spring Boot App.
 
 Access the Application:
+
 http://localhost:8080
 
-Key Functionalities
--> Admin
+🎯 Key Functionalities
+🔑 Admin
 Manage Policies (Add / Update / Delete / View / Search)
+
 Approve / Reject Policies
+
 Manage Claims (Approve / Reject with Remarks)
+
 View all Customers and Applications
 
--> Customer
+👤 Customer
 Apply for Policies
+
 View Application Status
+
 Raise Claims
+
 View Claim Status
 
-Future Enhancements
+🔮 Future Enhancements
 PDF generation for insurance certificates.
+
 JWT or OAuth-based Authentication.
+
 Email notifications for all status updates.
+
 Role-based dashboards for analytics.
 
-Best Practices Followed
+✨ Best Practices Followed
 Layered architecture: Controller → Service → Repository
+
 Clean separation of concerns (MVC).
+
 Validation on both frontend and backend.
+
 .gitignore used for sensitive files (application.properties).
+
 Proper error handling with custom exceptions.
 
 🛑 Important
