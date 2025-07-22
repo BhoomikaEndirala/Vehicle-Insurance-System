@@ -54,11 +54,6 @@ src/
 │ │ └── js/ (JavaScript Files)
 │ └── application.properties (local only)
 └── test/
-
-yaml
-Copy
-Edit
-
 ---
 
 ## 🧑‍💻 How to Run the Project
